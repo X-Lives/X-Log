@@ -2,7 +2,7 @@
 
 # 1: 硬定义
 file_name="main.sh"
-file_version="0.0.1-alpha"
+file_version="0.0.2-alpha"
 file_type="Shell"
 file_language_name="${file_name}_language.txt"
 file_update_name="${file_name}_latest"
