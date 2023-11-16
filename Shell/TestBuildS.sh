@@ -1,7 +1,8 @@
 cd "$directory_main/server"
 
-./configure 1
-make
+chmod u+x ./configure
+./configure 1 || exit 1
+make || exit 1
 
 if [ ! -h categories ];then
     ln -s "../../${directory_data}/categories" .

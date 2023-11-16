@@ -5,7 +5,8 @@ rm */cache.fcz
 rm */bin_*cache.fcz
 
 cd "../${directory_main}"
-./configure 1
+chmod u+x ./configure
+./configure 1 || exit 1
 
 cd gameSource
 sh makeEditor.sh

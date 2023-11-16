@@ -1,4 +1,6 @@
 #!/bin/sh
+directory_data="X-Data"
+directory_main="X-Lives"
 
 cd ../..
 
@@ -7,10 +9,11 @@ rm */cache.fcz
 rm */bin_*cache.fcz
 
 cd "../${directory_main}"
-./configure 1
+chmod u+x ./configure
+./configure 1 || exit 1
 
 cd gameSource
-make
+make || exit 1
 
 sh makeEditor.sh
 sh makeEditor-zh_cn.sh
@@ -71,12 +74,13 @@ then
 fi
 
 echo 1 > settings/useCustomServer.ini
-echo test@test.com > settings/settings/email.ini
+echo test@test.com > settings/email.ini
 echo testPassword > settings/accountKey.ini
 
 cd ../server
 
-./configure 1
+chmod u+x ./configure
+./configure 1 || exit 1
 make
 
 if [ ! -h categories ];then

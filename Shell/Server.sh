@@ -10,6 +10,7 @@ rm */cache.fcz
 rm */bin_*cache.fcz
 
 cd "../${directory_main}/server"
+chmod u+x ./configure
 ./configure 1
 
 make
