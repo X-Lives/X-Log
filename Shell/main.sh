@@ -251,6 +251,8 @@ if [ "$update_main_sh" = "true" ];then
             echo "$tip_1"
             wget -O "$file_update_name" https://raw.githubusercontent.com/X-Lives/X-Log/X/Shell/main.sh
             mv "$file_update_name" "$file_name"
+            chmod +x "$file_name"
+            exit 0
         else
             echo "$tip_3"
         fi
@@ -436,17 +438,26 @@ echo "------------------------"
 read -p "$read_6" key
 if [ "$key" = "t1" ];then
     cd X-Log/Shell
+    chmod +x TestBuildC.sh
     ./TestBuildC.sh
 elif [ "$key" = "t2" ];then
     cd X-Log/Shell
+    chmod +x TestBuildE.sh
     ./TestBuildE.sh
 elif [ "$key" = "t3" ];then
     cd X-Log/Shell
+    chmod +x TestBuildS.sh
     ./TestBuildS.sh
 elif [ "$key" = "t4" ];then
     cd X-Log/Shell
+    chmod +x TestBuildA.sh
     ./TestBuildA.sh
 elif [ "$key" = "s1" ];then
     cd X-Log/Shell
+    chmod +x Server.sh
     ./Server.sh
+elif [ "$key" = "c1" ];then
+    cd X-Log/Shell
+    chmod +x Clinent_Uni+Yum.sh
+    ./Clinent_Uni+Yum.sh
 fi
