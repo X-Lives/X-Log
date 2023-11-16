@@ -336,10 +336,10 @@ else
         yn_1=$(echo "$yn_1" | tr '[:upper:]' '[:lower:]')
         if [[ $yn_1 == *y* ]];then # [[ $yn_1 == *n* ]] || 
             echo "$tip_1"
-            git clone -b 
-            git clone -b
-            git clone -b
-            git clone -b
+            git clone -b "$branch_main" "$rope_main" "$directory_main"
+            git clone -b "$branch_data" "$rope_data" "$directory_data"
+            git clone -b "$branch_minor_gems" "$rope_minor_gems" "$directory_minor_gems"
+            git clone -b "$branch_log" "$rope_log" "$directory_log"
         else
             echo -e "$e_3"
             exit 1
