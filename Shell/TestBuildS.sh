@@ -1,20 +1,20 @@
-cd "$directory_main"/gameSource/server
+cd "$directory_main/server"
 
 ./configure 1
 make
 
 if [ ! -h categories ];then
-    ln -s ../../OneLifeData7/categories .
+    ln -s "../../${directory_data}/categories" .
 fi
 if [ ! -h objects ];then
-    ln -s ../../OneLifeData7/objects .
+    ln -s "../../${directory_data}/objects" .
 fi
 if [ ! -h transitions ];then
-    ln -s ../../OneLifeData7/transitions .
+    ln -s "../../${directory_data}/transitions" .
 fi
 if [ ! -h tutorialMaps ];then
-    ln -s ../../OneLifeData7/tutorialMaps .
+    ln -s "../../${directory_data}/tutorialMaps" .
 fi
 if [ ! -h dataVersionNumber.txt ];then
-    ln -s ../../OneLifeData7/dataVersionNumber.txt .
+    ln -s "../../${directory_data}/dataVersionNumber.txt" .
 fi

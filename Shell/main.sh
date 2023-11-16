@@ -125,6 +125,7 @@ if [ $language = 1 ];then
     read_4="输入[${ap3_update_1}/${ap3_update_2} | 默认为${ap3_update_1}]:"
     read_5="键入跳转到的页面[1]:"
     read_6="KEY [获取帮助:$0 ${ap_help}]"
+    Server_sh_read_1="键入服务器文件夹名称[server]:"
     tip_1="开始下载..."
     tip_2="版本不一致。"
     tip_3="跳过更新。"
@@ -438,10 +439,13 @@ if [ "$key" = "t1" ];then
 elif [ "$key" = "t2" ];then
     cd X-Log/Shell
     ./TestBuildE.sh
-elif [ "$key" = "t2" ];then
+elif [ "$key" = "t3" ];then
     cd X-Log/Shell
     ./TestBuildS.sh
-elif [ "$key" = "t2" ];then
+elif [ "$key" = "t4" ];then
     cd X-Log/Shell
     ./TestBuildA.sh
+elif [ "$key" = "s1" ];then
+    cd X-Log/Shell
+    ./Server.sh
 fi
