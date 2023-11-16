@@ -320,9 +320,9 @@ while [ "$hlep_echo" == "true" ];do
 done
 
 # 4: 检查
-if [ -b "$directory_main" ] && [ -b "$directory_data" ] && [ -b "$directory_minor_gems" ] && [ -b "$directory_log" ];then
+if [ -d "$directory_main" ] && [ -d "$directory_data" ] && [ -d "$directory_minor_gems" ] && [ -d "$directory_log" ];then
     echo -e "$o_1"
-elif [ -b "$directory_Shell" ];then
+elif [ -d "$directory_Shell" ];then
     echo -e "$w_1"
     cd ..
 elif [ -e "$directory_Shell_int" ];then
@@ -351,7 +351,7 @@ else
 fi
 
 # <-插入 功能 update
-if [ "update_md_l" = "true" ];then
+if [ "$update_md_l" = "true" ];then
     cd "$directory_main"
     git pull --tags
     cd ../"$directory_data"
@@ -361,7 +361,7 @@ if [ "update_md_l" = "true" ];then
     cd ../"$directory_log"
     git pull --tags
 fi
-if [update_md_s= "true" ];then
+if [ "$update_md_s" = "true" ];then
     read -p "$read_6" tag
     cd "$directory_main"
     git fetch $rope_main "$tag"
