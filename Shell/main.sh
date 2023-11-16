@@ -2,7 +2,7 @@
 
 # 1: 硬定义
 file_name="main.sh"
-file_version="0.0.4-alpha"
+file_version="0.0.5-alpha"
 file_type="Shell"
 file_language_name="${file_name}_language.txt"
 file_update_name="${file_name}_latest"
@@ -384,6 +384,7 @@ directory_minor_gems_v=$(cat "$directory_minor_gems_v_f")
 cd ..
 cd "$directory_log"
 directory_log_v=$(cat "$directory_log_v_f")
+cd ..
 if [ "$directory_main_v" = "$directory_main_v" ] && [ "$directory_data_v" = "$directory_main_v" ] && [ "$directory_minor_gems_v" = "$directory_main_v" ] && [ "$directory_log_v" = "$directory_main_v" ] && [ ! "$directory_main_v" = "" ]; then
     echo -e "$o_5"
 else
