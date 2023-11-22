@@ -1,5 +1,7 @@
 #!/bin/bash
 
+# Version: 1.0
+
 # 1: 硬定义
 file_name="main.sh"
 file_version="0.0.6-alpha"
