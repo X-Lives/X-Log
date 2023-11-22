@@ -1,3 +1,7 @@
+#!/bin/bash
+
+source "variables.sh"
+
 cd "$directory_main/server"
 
 chmod u+x ./configure

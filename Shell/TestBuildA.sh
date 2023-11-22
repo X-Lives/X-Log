@@ -1,6 +1,6 @@
-#!/bin/sh
-directory_data="X-Data"
-directory_main="X-Lives"
+#!/bin/bash
+
+source "variables.sh"
 
 cd ../..
 

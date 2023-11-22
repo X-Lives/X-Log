@@ -1,4 +1,6 @@
-#!/bin/sh
+#!/bin/bash
+
+source "variables.sh"
 
 cd ../..
 

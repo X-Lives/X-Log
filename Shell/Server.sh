@@ -1,4 +1,6 @@
-#!/bin/sh
+#!/bin/bash
+
+source "variables.sh"
 
 read -p "${Server_sh_read_1}" text
 

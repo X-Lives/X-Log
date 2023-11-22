@@ -1,3 +1,7 @@
+#!/bin/bash
+
+source "variables.sh"
+
 cd ../..
 
 cd "${directory_data}"
