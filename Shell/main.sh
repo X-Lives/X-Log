@@ -2,7 +2,7 @@
 
 source "variables.sh"
 
-## 参数
+## parameter | 参数
 if_1=$(echo "$1" | tr '[:upper:]' '[:lower:]')
 if_2=$(echo "$2" | tr '[:upper:]' '[:lower:]')
 if_3=$(echo "$3" | tr '[:upper:]' '[:lower:]')
@@ -10,7 +10,7 @@ if_4=$(echo "$4" | tr '[:upper:]' '[:lower:]')
 if [ "$if_1" = "" ];then
     echo ""
 elif [ "$if_1" = "$ap_update" ]; then
-    if [ "$if_2" = "" ] || [ "$if_2" = "$file_name" ];then
+    if [ "$if_2" = "" ] || [ "$if_2" = "$main_file_name" ];then
         update_main_sh=true
         echo -e "$o_2"
     elif [ "$if_2" = "$ap2_update" ];then
@@ -46,23 +46,23 @@ else
     exit 1
 fi
 
-# 3: 功能
-## 检查更新
+# 3: Function | 功能
+## Check for updates | 检查更新
 if [ "$update_main_sh" = "true" ];then
     origin_version=$(curl -L https://raw.githubusercontent.com/X-Lives/X-Log/X/Version/X-main.sh_Version.txt)
-    if [ "$origin_version" = "$file_version" ]; then
+    if [ "$origin_version" = "$main_file_version" ]; then
         echo -e "$o_3"
-        echo "origin_version: $origin_version | file_version: $file_version"
+        echo "origin_main_version: $origin_version | main_file_version: $main_file_version"
     else
         echo "$tip_2"
-        echo "origin_version: $origin_version | file_version: $file_version"
+        echo "origin_main_version: $origin_version | main_file_version: $main_file_version"
         read -p "$read_2" yn_2
         yn_2=$(echo "$yn_2" | tr '[:upper:]' '[:lower:]')
         if [[ "$yn_2" == *y* ]];then
             echo "$tip_1"
-            wget -O "$file_update_name" https://raw.githubusercontent.com/X-Lives/X-Log/X/Shell/main.sh
-            mv "$file_update_name" "$file_name"
-            chmod +x "$file_name"
+            wget -O "$main_file_update_name" https://raw.githubusercontent.com/X-Lives/X-Log/X/Shell/main.sh
+            mv "$main_file_update_name" "$main_file_name"
+            chmod +x "$main_file_name"
             exit 0
         else
             echo "$tip_3"
@@ -132,7 +132,7 @@ while [ "$hlep_echo" == "true" ];do
     fi
 done
 
-# 4: 检查
+# 4: examine | 检查
 if [ -d "$directory_main" ] && [ -d "$directory_data" ] && [ -d "$directory_minor_gems" ] && [ -d "$directory_log" ];then
     echo -e "$o_1"
 elif [ -d "$directory_Shell" ];then
@@ -143,7 +143,7 @@ elif [ -e "$directory_Shell_int" ];then
     cd ../..
 else
     files=(*)
-    if [ ${#files[@]} == 2 ] && [ -e "$file_name" ] && [ -e "$file_language_name" ]; then
+    if [ ${#files[@]} == 2 ] && [ -e "$main_file_name" ] && [ -e "$file_language_name" ]; then
         echo -e "$w_2"
         read -p "$read_1" yn_1
         yn_1=$(echo "$yn_1" | tr '[:upper:]' '[:lower:]')
@@ -163,7 +163,7 @@ else
     fi
 fi
 
-# <-插入 功能 update
+# <-insert function update | 插入功能 update
 if [ "$update_md_l" = "true" ];then
     cd "$directory_main"
     git pull --tags
@@ -207,7 +207,7 @@ else
     directory_data_v_number=$(($directory_data_v+0))
     directory_minor_gems_v_number=$(($directory_minor_gems_v+0))
     directory_log_v_number=$(($directory_log_v+0))
-    ## 计算最大值
+    ## Calculate the maximum value | 计算最大值
     max=$directory_main_v_number
     if [ $directory_data_v_number -gt $max ]; then
         max=$directory_data_v_number
@@ -218,7 +218,7 @@ else
     if [ $directory_log_v_number -gt $max ]; then
         max=$directory_log_v_number
     fi
-    ## 计算最小值
+    ## Calculate minimum value | 计算最小值
     min=$directory_main_v_number
     if [ $directory_data_v_number -lt $min ]; then
         min=$directory_data_v_number
@@ -242,7 +242,7 @@ else
     fi
 fi
 
-# 5: 运行
+# 5: Run | 运行
 echo -e "$o_4"
 echo ""
 echo "------------------------"
