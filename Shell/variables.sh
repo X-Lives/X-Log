@@ -17,9 +17,9 @@ main_file_type="shell"
 file_language_name="language.txt"
 file_update_name="${file_name}_latest"
 main_file_update_name="${main_file_name}_latest"
-language-zh_cn="language-zh_cn.sh"
-language-en_us="language-en_us.sh"
-language-zh_tw="language-zh_tw.sh"
+language_zh_cn="language-zh_cn.sh"
+language_en_us="language-en_us.sh"
+language_zh_tw="language-zh_tw.sh"
 ## directory
 directory_main="X-Lives"
 directory_data="X-Data"
@@ -117,11 +117,11 @@ if [ $language = "$D_En" ];then
 fi
 if [ $language = 1 ];then
     # zh_cn
-    source "${language-zh_cn}"
+    source "${language_zh_cn}"
 elif [ $language = 2 ];then
     #en_us
-    source "${language-en_us}"
+    source "${language_en_us}"
 elif [ $language = 3 ];then
     #zh_tw
-    source "${language-zh_tw}"
+    source "${language_zh_tw}"
 fi
