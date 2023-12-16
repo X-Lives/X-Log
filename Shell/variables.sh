@@ -26,6 +26,7 @@ directory_data="X-Data"
 directory_minor_gems="minorGems"
 directory_log="X-Log"
 directory_Shell="Shell"
+directory_bin="X-bin"
 directory_Shell_int="${directory_Shell}.int"
 directory_main_v_f="${directory_main}_Version.txt" ## v_f = version_file_name
 directory_data_v_f="${directory_data}_Version.txt"
