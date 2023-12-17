@@ -12,35 +12,19 @@ echo " 1 --- git pull all. "
 # echo " 2 --- git push all. "
 echo " 3 --- git push choose. "
 read -p "KEY[1-2]:" do
+
 cd ../..
-
-cd "${directory_main}"
-
-cd ..
-
-cd "${directory_data}"
-
-cd ..
-
-cd "${directory_minor_gems}"
-
-cd ..
-
-cd "${directory_log}"
 
 if [ "$do" = "1" ];then
     cd "${directory_main}"
     git pull
     cd ..
-    git pull
     cd "${directory_data}"
     git pull
     cd ..
-    git pull
     cd "${directory_minor_gems}"
     git pull
     cd ..
-    git pull
     cd "${directory_log}"
     git pull
     cd ..
@@ -69,18 +53,20 @@ elif [ "$do" = "3" ];then
             if_git_sh_read_2=$(echo "$git_sh_read_2" | tr '[:upper:]' '[:lower:]')
             if [ "${if_git_sh_read_2}" == *y* ];then
                 git_sh_number=0
-                while []
-                do
-                    git_sh_number=$((git_sh_number + 1))
-                    read -p "Message: " 
-                done
+                # while true
+                # do
+                #     git_sh_number=$((git_sh_number + 1))
+                #     read -p "Message: " 
+                # done
+                git commit # wait
             else
                 # wait
+                echo .
             fi
         else
             git commit
         fi
-    fi
+    else
         exit 1
     fi
 fi
